@@ -1,0 +1,61 @@
+ {% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+	<link rel="stylesheet" href="{% static "shop/css/bootstrap.css" %}">
+	<link rel="stylesheet" href="{% static "shop/css/bootstrap.css.map" %}">
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="{% url 'home' %}">fleurette-shop</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                      <ul class="navbar-nav">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="{% url 'home' %}">Acceuil <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Produits</a>
+                        </li>
+                        <li class="nav-item">
+                          <button id="panier" type="button" class="btn btn-secondary" data-html="true" 
+						  data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+                          sagittis lacus vel augue laoreet rutrum faucibus.">
+                            Panier(0)
+                          </button>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Categories
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" name="item-name" href="#">sac</a>
+                            <a class="dropdown-item" name="item-name" href="#">collier</a>
+                            <a class="dropdown-item" name="item-name" href="#">bracelet</a>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+            </div>
+        </div>
+
+        {% block content %}{% endblock %}
+    </div>
+  <script src="{% static "shop/js/bootstrap.bundle.js.map" %}" ></script>  
+  <script src="{% static "shop/js/bootstrap.js" %}" ></script>  
+  <script src="{% static "shop/js/jquery.js" %}" ></script>  
+
+</body>
+{% block js %}{% endblock %}
+</html>
